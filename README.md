@@ -51,32 +51,20 @@ deno run --allow-net https://raw.githubusercontent.com/el3um4s/DenoWiki/master/d
 
 ### API: wikiSearch
 
+* **function wikiSearch(options): Promise<WikiSearch_Query>** : _Search for a term on Wikipedia and return the corresponding pages (max 500)_
+* **function getPageId(wikiJSON: WikiSearch_Query, position): number** : _Returns the pageID number of Wikipedia referring to the searched term_
+* **function getSearchTitle(wikiJSON: WikiSearch_Query, position): string** : _Returns the Title of Wikipedia referring to the searched term_
 * **function getNumberResults(wikiJSON: WikiSearch_Query): number** : _Returns the total number of matches found for the search term. May be bigger than the results returned by wikiSearch(options)_
-
-**function getNumberResultsListed(wikiJSON: WikiSearch_Query): number** : _Returns the number of results found by wikiSearch(options)_
-
-**function getPageId(wikiJSON: WikiSearch_Query, position): number** : _Returns the pageID number of Wikipedia referring to the searched term_
-
-**function getSearchTitle(wikiJSON: WikiSearch_Query, position): string** : _Returns the Title of Wikipedia referring to the searched term_
-
-**function getSuggestion(wikiJSON: WikiSearch_Query): string** : _Returns the suggested term related to the searched term_
-
-**function hasResult(wikiJSON: WikiSearch_Query): boolean** : _TRUE if there are results for the searched term_
-
-**function hasSuggestion(wikiJSON: WikiSearch_Query): boolean** : _TRUE if there are suggested searches related to the searched term_
-
-**function wikiSearch(options): Promise<WikiSearch_Query>** : _Search for a term on Wikipedia and return the corresponding pages (max 500)_
-
-**function wikiSearchQuery(options): string** : _Returns the url address to be used as the source to obtain the information_
+* **function getNumberResultsListed(wikiJSON: WikiSearch_Query): number** : _Returns the number of results found by wikiSearch(options)_
+* **function getSuggestion(wikiJSON: WikiSearch_Query): string** : _Returns the suggested term related to the searched term_
+* **function hasResult(wikiJSON: WikiSearch_Query): boolean** : _TRUE if there are results for the searched term_
+* **function hasSuggestion(wikiJSON: WikiSearch_Query): boolean** : _TRUE if there are suggested searches related to the searched term_
+* **function wikiSearchQuery(options): string** : _Returns the url address to be used as the source to obtain the information_
 
 ### API: wikiParse
 
-**function getHTMLText(wikiPage: WikiParse_Query): string** : _Returns the parsed text of the wikitext._
-
-**function getPageTitle(wikiPage: WikiParse_Query): string** : _Returns the Title of Wikipedia referring to the page searched_
-
-**function getWikiText(wikiPage: WikiParse_Query): string** : _Returns the original wikitext._
-
-**function wikiParse(options): Promise<WikiParse_Query>** : _Returns the contents of a Wikipedia page_
-
-**function wikiParseQuery(options): string**: _Returns the url address to be used as the source to obtain the information_
+* **function wikiParse(options): Promise<WikiParse_Query>** : _Returns the contents of a Wikipedia page_
+* **function getWikiText(wikiPage: WikiParse_Query): string** : _Returns the original wikitext._
+* **function getHTMLText(wikiPage: WikiParse_Query): string** : _Returns the parsed text of the wikitext._
+* **function getPageTitle(wikiPage: WikiParse_Query): string** : _Returns the Title of Wikipedia referring to the page searched_
+* **function wikiParseQuery(options): string**: _Returns the url address to be used as the source to obtain the information_
