@@ -38,7 +38,7 @@ export function wikiSearchQuery(options = {}): string {
   return `https://${params.language}.${params.url}?action=${params.action}&list=${params.list}&srsearch=${params.srsearch}&srlimit=${params.srlimit}&srprop=${params.srprop}&utf8=${params.utf8}&format=${params.format}&origin=${params.origin}`;
 }
 
-/** TRUE if there are suggested searches related to the term searched */
+/** TRUE if there are suggested searches related to the searched term */
 export function hasSuggestion(wikiJSON: WikiSearch_Query): boolean {
   return !!wikiJSON?.query?.searchinfo?.suggestion;
   // return !!wikiJSON.query.searchinfo.suggestion;
@@ -50,7 +50,7 @@ export function getSuggestion(wikiJSON: WikiSearch_Query): string {
   // return hasSuggestion(wikiJSON) ? wikiJSON.query.searchinfo.suggestion : "";
 }
 
-/** TRUE if there are results for the search term */
+/** TRUE if there are results for the searched term */
 export function hasResult(wikiJSON: WikiSearch_Query): boolean {
   return wikiJSON?.query?.searchinfo?.totalhits > 0
   // try {
@@ -63,8 +63,8 @@ export function hasResult(wikiJSON: WikiSearch_Query): boolean {
   // }
 }
 
-/** Returns the total number of matches found for the search term.
- * May be greater than the results returned by wikiSearch(options)
+/** Returns the total number of matches found for the searched term.
+ * May be bigger than the results returned by wikiSearch(options)
 */
 export function getNumberResults(wikiJSON: WikiSearch_Query): number {
   return +wikiJSON?.query?.searchinfo?.totalhits;
@@ -83,7 +83,7 @@ export function getNumberResultsListed(wikiJSON: WikiSearch_Query): number {
   // }
 }
 
-/** Returns the pageID number of Wikipedia referring to the term searched */
+/** Returns the pageID number of Wikipedia referring to the searched term */
 export function getPageId(
   wikiJSON: WikiSearch_Query,
   position = 0,
@@ -97,7 +97,7 @@ export function getPageId(
     return 0;
   }
 }
-/** Returns the Title of Wikipedia referring to the term searched */
+/** Returns the Title of Wikipedia referring to the searched term */
 export function getSearchTitle(
   wikiJSON: WikiSearch_Query,
   position = 0,

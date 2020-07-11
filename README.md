@@ -26,63 +26,57 @@ console.log(text);
 
 This module use the Wikipedia [API:Search](https://www.mediawiki.org/wiki/API:Search) and [API:Parsing wikitext](https://www.mediawiki.org/wiki/API:Parsing_wikitext).
 
-Require `node` (obviously) and `--allow-net` permission.
+Require `deno` (obviously) and `--allow-net` permission.
 
-There are 2 demos available. The first demo can query Wikipedia and print the first result
+There are 2 demos available. The first demo queries Wikipedia and print the first result
 
 ```
 deno run --allow-net .\demo_cmd.ts milan en false
 deno run --allow-net .\demo_cmd.ts "doctor who" en true
 ```
 
-The second demo can search a list of people and return how many exist in Wikipedia
+The second demo searches a list of people and return how many exist in Wikipedia
 
 ```
 deno run --allow-net .\demo_array.ts
 ```
 
+You can run the demos directly from the repository with the commands:
+
+```
+deno run --allow-net https://raw.githubusercontent.com/el3um4s/DenoWiki/master/demo_cmd.ts milan en false
+deno run --allow-net https://raw.githubusercontent.com/el3um4s/DenoWiki/master/demo_cmd.ts "doctor who" en true
+deno run --allow-net https://raw.githubusercontent.com/el3um4s/DenoWiki/master/demo_array.ts
+```
+
 ### API: wikiSearch
 
-**function getNumberResults(wikiJSON: WikiSearch_Query): number**
-    May be greater than the results returned by wikiSearch(options)
+* **function getNumberResults(wikiJSON: WikiSearch_Query): number** : _Returns the total number of matches found for the search term. May be bigger than the results returned by wikiSearch(options)_
 
-**function getNumberResultsListed(wikiJSON: WikiSearch_Query): number**
-    Returns the number of results found by wikiSearch(options)
+**function getNumberResultsListed(wikiJSON: WikiSearch_Query): number** : _Returns the number of results found by wikiSearch(options)_
 
-**function getPageId(wikiJSON: WikiSearch_Query, position): number**
-    Returns the pageID number of Wikipedia referring to the term searched
+**function getPageId(wikiJSON: WikiSearch_Query, position): number** : _Returns the pageID number of Wikipedia referring to the searched term_
 
-**function getSearchTitle(wikiJSON: WikiSearch_Query, position): string**
-    Returns the Title of Wikipedia referring to the term searched
+**function getSearchTitle(wikiJSON: WikiSearch_Query, position): string** : _Returns the Title of Wikipedia referring to the searched term_
 
-**function getSuggestion(wikiJSON: WikiSearch_Query): string**
-    Returns the suggested term related to the searched term
+**function getSuggestion(wikiJSON: WikiSearch_Query): string** : _Returns the suggested term related to the searched term_
 
-**function hasResult(wikiJSON: WikiSearch_Query): boolean**
-    TRUE if there are results for the search term
+**function hasResult(wikiJSON: WikiSearch_Query): boolean** : _TRUE if there are results for the searched term_
 
-**function hasSuggestion(wikiJSON: WikiSearch_Query): boolean**
-    TRUE if there are suggested searches related to the term searched
+**function hasSuggestion(wikiJSON: WikiSearch_Query): boolean** : _TRUE if there are suggested searches related to the searched term_
 
-**function wikiSearch(options): Promise<WikiSearch_Query>**
-    const wikiJSON = await wiki.wikiSearch( { language: en, srsearch: "hello world", srlimit: 5 } );
+**function wikiSearch(options): Promise<WikiSearch_Query>** : _Search for a term on Wikipedia and return the corresponding pages (max 500)_
 
-**function wikiSearchQuery(options): string**
-    const wikiSearchQuery = await wiki.wikiSearchQuery( { language: "en", srsearch: "hello world", srlimit: 5 } );
+**function wikiSearchQuery(options): string** : _Returns the url address to be used as the source to obtain the information_
 
 ### API: wikiParse
 
-**function getHTMLText(wikiPage: WikiParse_Query): string**
-    Returns the parsed text of the wikitext.
+**function getHTMLText(wikiPage: WikiParse_Query): string** : _Returns the parsed text of the wikitext._
 
-**function getPageTitle(wikiPage: WikiParse_Query): string**
-    Returns the Title of Wikipedia referring to the page searched
+**function getPageTitle(wikiPage: WikiParse_Query): string** : _Returns the Title of Wikipedia referring to the page searched_
 
-**function getWikiText(wikiPage: WikiParse_Query): string**
-    Returns the original wikitext.
+**function getWikiText(wikiPage: WikiParse_Query): string** : _Returns the original wikitext._
 
-function wikiParse(options): Promise<WikiParse_Query>
-     const wikiPageByTitle = await wiki.wikiParse( { title: '"Hello, World!" program', language: "en" } );
+**function wikiParse(options): Promise<WikiParse_Query>** : _Returns the contents of a Wikipedia page_
 
-function wikiParseQuery(options): string
-     const wikiParseQueryByTitle = await wiki.wikiSearchQuery( { title: '"Hello, World!" program', language: "en" } );
+**function wikiParseQuery(options): string**: _Returns the url address to be used as the source to obtain the information_
