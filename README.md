@@ -10,7 +10,7 @@ A simple API for DenoJS to query Wikipedia and parse the results.
 ### Usage
 
 ```typescript
-import * as wiki from "./mod.ts";
+import * as wiki from "https://raw.githubusercontent.com/el3um4s/DenoWiki/master/mod.ts";
 
 const wikiSearchResult: wiki.WikiSearch_Query = await wiki.wikiSearch(
   { language: "en", srsearch: "doctor who", srlimit: 15 },
@@ -24,7 +24,9 @@ const text: string = wiki.getWikiText(wikiPage);
 console.log(text);
 ```
 
-This module use the Wikipedia [API:Search](https://www.mediawiki.org/wiki/API:Search) and [API:Parsing wikitext](https://www.mediawiki.org/wiki/API:Parsing_wikitext)
+This module use the Wikipedia [API:Search](https://www.mediawiki.org/wiki/API:Search) and [API:Parsing wikitext](https://www.mediawiki.org/wiki/API:Parsing_wikitext).
+
+Require `node` (obviously) and `--allow-net` permission.
 
 There are 2 demos available. The first demo can query Wikipedia and print the first result
 
