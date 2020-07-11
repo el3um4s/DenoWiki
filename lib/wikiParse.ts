@@ -40,7 +40,9 @@ export function wikiParseQuery(options = {}): string {
 
 /** Returns the Title of Wikipedia referring to the page searched */
 export function getPageTitle(wikiPage: WikiParse_Query): string {
-  return wikiPage?.parse?.title ? wikiPage.parse.title : "ERROR - ID DON'T FOUND";
+  return wikiPage?.parse?.title
+    ? wikiPage.parse.title
+    : "ERROR - ID DON'T FOUND";
   // try {
   //   return wikiPage.parse.title !== null && wikiPage.parse.title !== undefined
   //     ? wikiPage.parse.title
@@ -52,7 +54,9 @@ export function getPageTitle(wikiPage: WikiParse_Query): string {
 
 /** Returns the original wikitext. */
 export function getWikiText(wikiPage: WikiParse_Query): string {
-  return wikiPage?.parse?.wikitext ? wikiPage.parse.wikitext["*"] : "ERROR - ID DON'T FOUND";
+  return wikiPage?.parse?.wikitext
+    ? wikiPage.parse.wikitext["*"]
+    : "ERROR - ID DON'T FOUND";
   // try {
   //   return wikiPage.parse.wikitext !== null &&
   //     wikiPage.parse.wikitext !== undefined
@@ -65,7 +69,9 @@ export function getWikiText(wikiPage: WikiParse_Query): string {
 
 /** Returns the parsed text of the wikitext. */
 export function getHTMLText(wikiPage: WikiParse_Query): string {
-  return wikiPage?.parse?.text ? wikiPage.parse.text["*"] : "ERROR - ID DON'T FOUND";
+  return wikiPage?.parse?.text
+    ? wikiPage.parse.text["*"]
+    : "ERROR - ID DON'T FOUND";
   // try {
   //   return wikiPage.parse.text !== null && wikiPage.parse.text !== undefined
   //     ? wikiPage.parse.text["*"]

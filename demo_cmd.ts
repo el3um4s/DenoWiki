@@ -44,7 +44,7 @@ if (hasResult) {
     { pageid: pageID, language: language, prop: "wikitext|text" },
   );
 
-  const text : string = wiki.getWikiText(wikiPage);
+  const text: string = wiki.getWikiText(wikiPage);
   console.log("result: ", wiki.getNumberResults(wikiSearchResult));
   console.log(logResult(wikiSearchResult));
 

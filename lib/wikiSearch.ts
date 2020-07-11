@@ -52,7 +52,7 @@ export function getSuggestion(wikiJSON: WikiSearch_Query): string {
 
 /** TRUE if there are results for the searched term */
 export function hasResult(wikiJSON: WikiSearch_Query): boolean {
-  return wikiJSON?.query?.searchinfo?.totalhits > 0
+  return wikiJSON?.query?.searchinfo?.totalhits > 0;
   // try {
   //   return wikiJSON.query.searchinfo !== null &&
   //     wikiJSON.query.searchinfo !== undefined
