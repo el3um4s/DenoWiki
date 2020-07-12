@@ -43,13 +43,6 @@ export function getPageTitle(wikiPage: WikiParse_Query): string {
   return wikiPage?.parse?.title
     ? wikiPage.parse.title
     : "ERROR - ID DON'T FOUND";
-  // try {
-  //   return wikiPage.parse.title !== null && wikiPage.parse.title !== undefined
-  //     ? wikiPage.parse.title
-  //     : "ERROR - ID DON'T FOUND";
-  // } catch (error) {
-  //   return "ERROR - ID DON'T FOUND";
-  // }
 }
 
 /** Returns the original wikitext. */
@@ -57,14 +50,6 @@ export function getWikiText(wikiPage: WikiParse_Query): string {
   return wikiPage?.parse?.wikitext
     ? wikiPage.parse.wikitext["*"]
     : "ERROR - ID DON'T FOUND";
-  // try {
-  //   return wikiPage.parse.wikitext !== null &&
-  //     wikiPage.parse.wikitext !== undefined
-  //     ? wikiPage.parse.wikitext["*"]
-  //     : "ERROR - ID DON'T FOUND";
-  // } catch (error) {
-  //   return "ERROR - ID DON'T FOUND";
-  // }
 }
 
 /** Returns the parsed text of the wikitext. */
@@ -72,11 +57,4 @@ export function getHTMLText(wikiPage: WikiParse_Query): string {
   return wikiPage?.parse?.text
     ? wikiPage.parse.text["*"]
     : "ERROR - ID DON'T FOUND";
-  // try {
-  //   return wikiPage.parse.text !== null && wikiPage.parse.text !== undefined
-  //     ? wikiPage.parse.text["*"]
-  //     : "ERROR - ID DON'T FOUND";
-  // } catch (error) {
-  //   return "ERROR - ID DON'T FOUND";
-  // }
 }

@@ -41,26 +41,16 @@ export function wikiSearchQuery(options = {}): string {
 /** TRUE if there are suggested searches related to the searched term */
 export function hasSuggestion(wikiJSON: WikiSearch_Query): boolean {
   return !!wikiJSON?.query?.searchinfo?.suggestion;
-  // return !!wikiJSON.query.searchinfo.suggestion;
 }
 
 /** Returns the suggested term related to the searched term */
 export function getSuggestion(wikiJSON: WikiSearch_Query): string {
   return hasSuggestion(wikiJSON) ? wikiJSON?.query?.searchinfo?.suggestion : "";
-  // return hasSuggestion(wikiJSON) ? wikiJSON.query.searchinfo.suggestion : "";
 }
 
 /** TRUE if there are results for the searched term */
 export function hasResult(wikiJSON: WikiSearch_Query): boolean {
   return wikiJSON?.query?.searchinfo?.totalhits > 0;
-  // try {
-  //   return wikiJSON.query.searchinfo !== null &&
-  //     wikiJSON.query.searchinfo !== undefined
-  //     ? wikiJSON.query.searchinfo.totalhits > 0
-  //     : false;
-  // } catch (error) {
-  //   return false;
-  // }
 }
 
 /** Returns the total number of matches found for the searched term.
@@ -68,19 +58,11 @@ export function hasResult(wikiJSON: WikiSearch_Query): boolean {
 */
 export function getNumberResults(wikiJSON: WikiSearch_Query): number {
   return +wikiJSON?.query?.searchinfo?.totalhits;
-  // return +wikiJSON.query.searchinfo.totalhits;
 }
 
 /** Returns the number of results found by wikiSearch(options) */
 export function getNumberResultsListed(wikiJSON: WikiSearch_Query): number {
   return wikiJSON?.query?.search?.length ? wikiJSON.query.search.length : 0;
-  // try {
-  //   return wikiJSON.query.search !== null && wikiJSON.query.search !== undefined
-  //     ? wikiJSON.query.search.length
-  //     : 0;
-  // } catch (error) {
-  //   return 0;
-  // }
 }
 
 /** Returns the pageID number of Wikipedia referring to the searched term */
@@ -88,7 +70,6 @@ export function getPageId(
   wikiJSON: WikiSearch_Query,
   position = 0,
 ): number {
-  // return wikiJSON?.query?.search ? wikiJSON.query.search[position].pageid : 0;
   try {
     return wikiJSON.query.search !== null && wikiJSON.query.search !== undefined
       ? wikiJSON.query.search[position].pageid
@@ -102,7 +83,6 @@ export function getSearchTitle(
   wikiJSON: WikiSearch_Query,
   position = 0,
 ): string {
-  // return wikiJSON?.query?.search ? wikiJSON.query.search[position].title : "";
   try {
     return wikiJSON.query.search !== null && wikiJSON.query.search !== undefined
       ? wikiJSON.query.search[position].title
