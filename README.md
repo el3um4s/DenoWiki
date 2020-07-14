@@ -10,7 +10,7 @@ A simple API for DenoJS to query Wikipedia and parse the results.
 ### Usage
 
 ```typescript
-import * as wiki from "https://raw.githubusercontent.com/el3um4s/DenoWiki/master/mod.ts";
+import * as wiki from "https://deno.land/x/denowiki/mod.ts";
 
 const wikiSearchResult: wiki.WikiSearch_Query = await wiki.wikiSearch(
   { language: "en", srsearch: "doctor who", srlimit: 15 },
@@ -44,8 +44,8 @@ deno run --allow-net .\demo_array.ts
 You can run the demos directly from the repository with the commands:
 
 ```
-deno run --allow-net https://raw.githubusercontent.com/el3um4s/DenoWiki/master/demo_cmd.ts milan en false
-deno run --allow-net https://raw.githubusercontent.com/el3um4s/DenoWiki/master/demo_cmd.ts "doctor who" en true
+deno run --allow-net https://deno.land/x/denowiki/demo_cmd.ts milan en false
+deno run --allow-net https://deno.land/x/denowiki/demo_cmd.ts "doctor who" en true
 deno run --allow-net https://raw.githubusercontent.com/el3um4s/DenoWiki/master/demo_array.ts
 ```
 
