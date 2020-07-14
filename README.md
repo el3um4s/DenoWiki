@@ -3,7 +3,8 @@
 [![GitHub license](https://img.shields.io/github/license/el3um4s/DenoWiki.svg)](https://github.com/el3um4s/DenoWiki/blob/master/LICENSE)
 [![GitHub tag](https://img.shields.io/github/tag/el3um4s/DenoWiki.svg)](https://GitHub.com/el3um4s/DenoWiki/tags/)
 [![HitCount](http://hits.dwyl.com/el3um4s/DenoWiki.svg)](http://hits.dwyl.com/el3um4s/DenoWiki)
-
+[![deno doc](https://doc.deno.land/badge.svg)](https://doc.deno.land/https/raw.githubusercontent.com/el3um4s/DenoWiki/master/mod.ts)
+[![deno.land](https://img.shields.io/badge/deno.land-1.2.0-blue)](https://deno.land/x/denowiki)
 
 A simple API for DenoJS to query Wikipedia and parse the results.
 
