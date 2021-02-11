@@ -1,6 +1,6 @@
 // Copyright 2020 Samuele de Tomasi. All rights reserved. MIT license.
 
-export type {
+export {
   WikiSearch_Query,
   WikiSearch_Params,
   WikiParse_Query,
