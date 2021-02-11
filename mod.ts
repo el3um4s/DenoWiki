@@ -1,11 +1,7 @@
-// Copyright 2020 Samuele de Tomasi. All rights reserved. MIT license.
-
-export {
-  WikiSearch_Query,
-  WikiSearch_Params,
-  WikiParse_Query,
-  WikiParse_Params,
-} from "./lib/interface.ts";
+export type WikiSearch_Query = import("./lib/interface.ts").WikiSearch_Query;
+export type WikiSearch_Params = import("./lib/interface.ts").WikiSearch_Params;
+export type WikiParse_Query = import("./lib/interface.ts").WikiParse_Query;
+export type WikiParse_Params = import("./lib/interface.ts").WikiParse_Params;
 
 export {
   wikiSearch,
